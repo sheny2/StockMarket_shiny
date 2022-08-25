@@ -1,0 +1,77 @@
+## Grading (100 points)
+## Score: 97
+
+1. *Project Scope:*  10
+
+2. *Background and motivation:* 10
+
+3. *Data description:* 10
+
+4. *Methodology:* 10
+
+5. *Implementation:* 9
+
+- summary tab: missing link for company abbreviations!
+
+- trends tab: 
+  - two-sided slider would be useful to allow the starting time to change too
+  - fix the y-axis scale so it doesn't jump around as the slider input changes. 
+  
+- portfolio tab: no check to make sure weights add to 1!
+
+- opt tab: should have a message returned (other than an error) if a user selects fewer than 5 stocks
+
+6. *Discussion/interpretation of results:* 10
+
+7. *Coding style and quality:* 10
+
+8. *Presentation:* 10
+
+- market tab: instruction 1. doesn't align with selection options
+
+9. *Submission:* 8
+
+- wrong repo naming convention
+
+The following aspects will be graded on a 5-point scale:
+
+10. *Creativity:* 5
+
+- great work!
+
+11. *Group evaluations.* 5
+
+
+
+### Rubric (100 points)
+
+While grading your reports I will focus on the following aspects. Each is worth 10 points, and you can think of the scale as follows: 10 = Excellent; 8 = Good; 5 = Fair; 2 = Poor; 0 = Did not complete.
+
+1. *Project Scope.* Did you choose the appropriate complexity and level of difficulty of your project? 
+
+2. *Background and motivation.* Appropriate background information is discussed to understand the research question for someone unfamiliar with the topic, and you have clearly communicated why your research  is interesting.
+
+3. *Data description.* It is clear what information your data set contains, as well as the source(s).
+
+4. *Methodology.* A clear and concise description of the methods used in your project is given. This coud include: data collection and cleaning, development of complex visualizations (if they are non-obvious to a data-literate reader), and modeling.
+
+5. *Implementation.* All methods are correctly implemented; that is, the results are correct with no flaws.
+
+6. *Discussion/interpretation of results.* Findings are clearly discussed and follow logically from the results.
+
+7. *Coding style and quality.* Code is well written, organized, and commented. A consistent coding style, such as the tidyverse style guide, is followed. A randomly selected Math 285 student could read the code and understand the implementation.
+
+8. *Presentation.* The website is clear and engaging. All visualizations are informative, insightful, and visually appealing. All tables are formatted (no raw output!), informative, insightful, and visually appealing. The writing is clear and without any mechanical errors.
+
+9. *Submission.* The project was submitted on time via GitHub, was complete and well organized. I should be able to easily navigate to your webpage based on a URL in the README file, get a sense of your roadmap from your technical report and all code and data necessary to replicate your analysis is organized in the repo. 
+
+The following aspects will be graded on a 5-point scale:
+
+10. *Creativity.* Five points will be awarded based for creativity and/or sophistication of the methodology. These points could be awarded for, but are not limited to:
+
+    * Outstanding visualizations that are unusually artistic, insightful, and/or challenging to produce.
+    * Data collection and cleaning that is unusually complex.
+    * Modeling that is unusually sophisticated or challenging.
+    * An exceptionally captivating presentation of the results.
+
+11. *Group evaluations.* Based on self and peer eval feedback.

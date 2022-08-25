@@ -1,0 +1,84 @@
+---
+title: "Cleaning_And_Preping"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+library(generics)
+library(timetk)
+library(tidyquant)
+library(tidyverse)
+library(plotly) 
+library(DescTools)
+library(stringr)
+library(shiny)
+library(shinyWidgets)
+library(shinythemes)
+library(shiny)
+library(plotly)
+library(lubridate)
+library(rlang)
+library(rsconnect)
+library(readr)
+```
+
+## Generating Clean Datasets 
+
+```{r}
+SP500_Individual <- read_csv("all_stocks_5yr.csv") 
+SP500_Individual$date
+SP500_Individual <- SP500_Individual %>%
+  select(Name,date,volume,close) %>%
+  group_by(Name) %>%
+  tq_transmute(select = close,mutate_fun = periodReturn, period = 'daily', col_rename = 'ret',type = 'log') %>%
+  pivot_wider(names_from=Name,values_from = ret)
+
+SP500_Individual <- SP500_Individual %>% pivot_longer(-date,names_to = "Stock",values_to = "Return") %>%
+  group_by(Stock) %>% summarise(Volatility = sd(Return)*sqrt(252),Return = (mean(Return)+1)^252-1)
+write.csv(SP500_Individual,
+          "SP500_Individual_clean.csv")
+```
+
+```{r}
+all_DJI <- tq_get("DJI",from = '2000-01-01',to = '2021-03-1',get = 'stock.prices') %>% select(date,adjusted) %>% mutate(adjusted = adjusted/adjusted[[1]])
+
+all_SPY <- tq_get("SPY",from = '2000-01-01',to = '2021-03-1',get = 'stock.prices') %>% select(date,adjusted) %>% mutate(adjusted = adjusted/adjusted[[1]])
+
+all_QQQ <- tq_get("QQQ",from = '2000-01-01',to = '2021-03-1',get = 'stock.prices') %>% select(date,adjusted) %>% mutate(adjusted = adjusted/adjusted[[1]])
+all_DJI
+write.csv(all_DJI,"all_DJI.csv")
+write.csv(all_QQQ,"all_QQQ.csv" )
+write.csv(all_SPY, "all_SPY.csv")
+```
+
+## K-means Selecting optimal number of clusters 
+```{r}
+k <- 1:20
+set.seed(8848)
+km_df <- map_df(k, .f = function(x){
+  km <- kmeans(SP500_stand[2:3],
+  centers = x,
+  nstart = 20)
+  tibble(k = x,total_wss = km$tot.withinss,
+  prop_explained = 1 - km$tot.withinss/km$totss)
+})
+
+km_df
+
+ggplot(km_df, aes(x = k, y = total_wss)) +
+geom_point() + geom_line() +
+scale_x_continuous(breaks=1:20)
+```
+
+```{r}
+set.seed(8848)
+
+km_SP500 <- kmeans(SP500_stand[2:3],centers=5, nstart=20)
+
+SP500_all_single<-SP_clean %>%
+mutate(cluster_km5 = str_c("cluster_",km_SP500$cluster))
+p <- ggplot(SP500_all_single,aes(x=Volatility,y=Return,color=cluster_km5,tooltip=Stock)) +geom_point()
+gglotly(p)
+```
+
+
