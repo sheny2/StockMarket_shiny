@@ -199,6 +199,7 @@ optimal_fun <- function(ER,stocks,n_simulation=1000){
     pivot_wider(names_from=symbol,values_from = ret) %>%
     drop_na()
   
+  
   # Define and prepare necessary statistics 
   
   mean_ret <- colMeans(price_data[2:6])
