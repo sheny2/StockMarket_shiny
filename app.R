@@ -202,8 +202,8 @@ optimal_fun <- function(ER,stocks,n_simulation=1000){
   
   # Define and prepare necessary statistics 
   
-  mean_ret <- colMeans(price_data[2:6])
-  cov_mat <- cov(price_data[2:6]) * 252
+  mean_ret <- colMeans(price_data[c(2:5,5)])
+  cov_mat <- cov(price_data[c(2:5,5)]) * 252
   total_weights <- matrix(nrow = n_simulation, ncol = length(stock_selected))
   
   
