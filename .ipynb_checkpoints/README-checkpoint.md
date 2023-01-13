@@ -10,7 +10,7 @@ Project URL: https://yicheng-shen.shinyapps.io/DS_Final_Project/
 
 ================
 
-Are you sometimes befuddled when choosing the best future investment? Are you tired of not catching up with the fluctuation of the financial market? Are you frustrated by the unpredictableness of your stocks? 
+Are you sometimes befuddled when choosing your best future investment? Are you tired of not catching up with the fluctuation of the financial market? Are you frustrated by the unpredictableness of your stocks? 
 
 Don't worry if your answer is yes! Because equipped with the data science and business knowledge of our team, this app is going to bring you the most informative overview and helpful advice regarding your problem!  
 
