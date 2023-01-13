@@ -72,7 +72,7 @@ This is a project about helping beginning investors to maximize their profits in
   
  ## Conclusion
  
-   Overall, this is app that incorporates sophisticated data science techiniques as well as buiness metrics, capable of generating personalized investment analysis and suggestions. It is strongly recommended at utilize its interactive functions to adjust the desired visualization as needed. We hope you like this app and it can be of some help to your life. Please enjoy it and thank you very much! 
+   Overall, this is an app that incorporates sophisticated data science techiniques as well as buiness metrics, capable of generating personalized investment analysis and suggestions. It is strongly recommended to utilize its interactive functions to adjust the desired visualization as needed. We hope that you will like this app and it can be of some help to your life. Please enjoy it and thank you very much! 
 
    
   
