@@ -1,5 +1,5 @@
 
-# STAT 220 Final Project
+# Stock Market Shiny app
 ==================
 
 Group Name: Steins Gate
